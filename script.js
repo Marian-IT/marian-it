@@ -268,3 +268,111 @@ contactForm.addEventListener("submit", function(e){
 
 });
 
+/*==============================
+SCROLL PROGRESS
+==============================*/
+
+window.addEventListener("scroll",()=>{
+
+const winScroll=document.documentElement.scrollTop;
+
+const height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+
+const scrolled=(winScroll/height)*100;
+
+document.getElementById("scroll-progress").style.width=scrolled+"%";
+
+});
+
+/*==============================
+CURSOR
+==============================*/
+
+const cursor=document.querySelector(".cursor");
+
+const dot=document.querySelector(".cursor-dot");
+
+document.addEventListener("mousemove",(e)=>{
+
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+
+dot.style.left=e.clientX+"px";
+dot.style.top=e.clientY+"px";
+
+});
+
+document.querySelectorAll("a,button").forEach(el=>{
+
+el.addEventListener("mouseenter",()=>{
+
+cursor.style.width="50px";
+cursor.style.height="50px";
+
+});
+
+el.addEventListener("mouseleave",()=>{
+
+cursor.style.width="32px";
+cursor.style.height="32px";
+
+});
+
+});
+
+/*==============================
+3D CARDS
+==============================*/
+
+document.querySelectorAll(".service-card,.price-card,.review-card,.why-card,.process-card").forEach(card=>{
+
+card.addEventListener("mousemove",(e)=>{
+
+const rect=card.getBoundingClientRect();
+
+const x=e.clientX-rect.left;
+
+const y=e.clientY-rect.top;
+
+const rotateY=(x-rect.width/2)/12;
+
+const rotateX=-(y-rect.height/2)/12;
+
+card.style.transform=`perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform="perspective(900px) rotateX(0) rotateY(0)";
+
+});
+
+});
+
+(async () => {
+
+    await loadStarsPreset(tsParticles);
+
+    await tsParticles.load({
+        id: "tsparticles",
+        options: {
+            preset: "stars",
+            background: {
+                color: "transparent"
+            },
+            particles: {
+                color: {
+                    value: "#60a5fa"
+                }
+            }
+        }
+    });
+
+})();
+
+setTimeout(()=>{
+
+document.querySelector(".wa-popup").classList.add("show");
+
+},5000);

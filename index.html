@@ -31,6 +31,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <body>
 
+<div class="cursor"></div>
+<div class="cursor-dot"></div>
+<div id="scroll-progress"></div>
+
 <header class="header" id="header">
 
     <div class="container">
@@ -50,36 +54,29 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
             <ul class="nav-menu">
 
-                <li><a href="#home" class="active">Acasă</a></li>
-                <li><a href="#services">Servicii</a></li>
-                <li><a href="#why">Avantaje</a></li>
-                <li><a href="#preturi">Prețuri</a></li>
-                <li><a href="#reviews">Recenzii</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <li><a href="#home" class="active">Acasă</a></li>
+    <li><a href="#services">Servicii</a></li>
+    <li><a href="#why">Avantaje</a></li>
+    <li><a href="#preturi">Prețuri</a></li>
+    <li><a href="#reviews">Recenzii</a></li>
+    <li><a href="#contact">Contact</a></li>
 
-            </ul>
+</ul>
 
-            <div class="nav-actions">
+<div class="nav-actions">
 
-                <a href="https://wa.me/40771797399" target="_blank" class="whatsapp">
+    <a href="https://wa.me/40771797399" class="whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-                    <i class="fab fa-whatsapp"></i>
+    <a href="tel:0771797399" class="call-btn">
+        <i class="fas fa-phone"></i>
+        Sună acum
+    </a>
 
-                </a>
+</div>
 
-                <a href="tel:0771797399" class="call-btn">
-
-                    <i class="fas fa-phone"></i>
-
-                    Sună acum
-
-                </a>
-
-            </div>
-
-        </nav>
-
-    </div>
+</nav>
 
 </header>
 
@@ -972,5 +969,29 @@ Reparații rapide, instalări Windows, upgrade SSD, curățare profesională și
 </footer>
 
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-stars@3/tsparticles.preset.stars.bundle.min.js"></script>
+<div id="tsparticles"></div>
+
+<div class="wa-popup">
+
+    <div class="wa-text">
+        <strong>Salut! 👋</strong>
+        <p> Ai nevoie de ajutor pentru PC, laptop sau telefon?<br>
+            Scrie-ne pe WhatsApp și răspundem cât mai rapid.
+        </p>
+
+    </div>
+
+    <a href="https://wa.me/40771797399" target="_blank">
+
+        <i class="fab fa-whatsapp"></i>
+
+        Scrie pe WhatsApp
+
+    </a>
+
+</div>
+
+</div>
 </body>
 </html>
