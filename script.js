@@ -171,7 +171,7 @@ window.scrollTo({
 
 const whatsapp = document.createElement("a");
 
-whatsapp.href = "https://wa.me/40724568180";
+whatsapp.href = "https://wa.me/40771797399";
 
 whatsapp.target = "_blank";
 
