@@ -1496,3 +1496,35 @@ transform:rotate(-8deg) scale(1.08);
     cursor:pointer;
     font-size:16px;
 }
+
+/* ===========================
+   PRETURI PREMIUM
+=========================== */
+
+.price-card h3{
+    font-size:28px;
+    font-weight:700;
+    margin:20px 0 15px;
+    line-height:1.3;
+    min-height:75px;
+}
+
+.price-card .price{
+    display:block;
+    margin:20px 0;
+    font-size:42px;
+    font-weight:800;
+    color:#60a5fa;
+    text-shadow:0 0 20px rgba(96,165,250,.35);
+    letter-spacing:1px;
+}
+
+.price-card p{
+    font-size:17px;
+    line-height:1.8;
+    color:#d6e3f3;
+}
+
+.price-card{
+    padding:45px 35px;
+}
