@@ -371,8 +371,46 @@ card.style.transform="perspective(900px) rotateX(0) rotateY(0)";
 
 })();
 
-setTimeout(()=>{
+const waPopup = document.querySelector(".wa-popup");
 
-document.querySelector(".wa-popup").classList.add("show");
+function showWhatsAppPopup() {
 
-},5000);
+    waPopup.classList.add("show");
+
+    setTimeout(() => {
+
+        waPopup.classList.remove("show");
+
+    }, 5000);
+
+}
+
+// Prima apariție după 5 secunde
+setTimeout(() => {
+
+    showWhatsAppPopup();
+
+    // Apoi la fiecare 30 secunde
+    setInterval(showWhatsAppPopup, 30000);
+
+}, 5000);
+
+window.addEventListener("load", () => {
+
+    const waPopup = document.querySelector(".wa-popup");
+
+    if (!waPopup) return;
+
+    setTimeout(() => {
+
+        waPopup.classList.add("show");
+
+        setTimeout(() => {
+
+            waPopup.classList.remove("show");
+
+        }, 5000);
+
+    }, 5000);
+
+});
