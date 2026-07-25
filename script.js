@@ -226,35 +226,44 @@ window.addEventListener("scroll",()=>{
 =========================== */
 
 emailjs.init({
-    publicKey: "XJmMnf8L39Cnf6iT1",
+    publicKey: "XJmMnf8L39Cnf6iT1"
 });
 
 const contactForm = document.getElementById("contact-form");
 
-contactForm.addEventListener("submit", function (e) {
+contactForm.addEventListener("submit", function(e){
 
     e.preventDefault();
+
+    const button = contactForm.querySelector("button");
+
+    button.disabled = true;
+    button.innerHTML = "Se trimite...";
 
     emailjs.sendForm(
         "service_MarianIT",
         "template_lj3ukwq",
-        this
+        contactForm
     )
-
     .then(() => {
 
-        alert("Mesajul a fost trimis cu succes!");
-
+        button.innerHTML = "✓ Mesaj trimis";
         contactForm.reset();
 
-    })
+        setTimeout(()=>{
+            button.disabled = false;
+            button.innerHTML = '<i class="fas fa-paper-plane"></i> Trimite mesaj';
+        },2000);
 
-    .catch((error) => {
+    })
+    .catch((error)=>{
 
         console.error(error);
 
-        alert("A apărut o eroare. Încearcă din nou.");
+        button.disabled = false;
+        button.innerHTML = '<i class="fas fa-paper-plane"></i> Trimite mesaj';
 
+        alert("A apărut o eroare.");
     });
 
 });

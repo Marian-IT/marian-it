@@ -28,29 +28,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-<script>
-emailjs.init({
-    publicKey: "XJmMnf8L39Cnf6iT1"
-});
+<script src="script.js"></script>
 
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    emailjs.sendForm(
-        "service_MarianIT",
-        "template_lj3ukwq",
-        this
-    )
-    .then(() => {
-        alert("Mesaj trimis cu succes!");
-        this.reset();
-    })
-    .catch((error) => {
-        console.error(error);
-        alert("Eroare la trimitere.");
-    });
-});
-</script>
 </body>
 
 <header class="header" id="header">
@@ -920,13 +899,15 @@ document.getElementById("contact-form").addEventListener("submit", function(even
 
 </div>
 
-<form id="contact-form">
+<form id="contact-form" class="contact-form">
     <input type="text" name="name" placeholder="Nume" required>
     <input type="email" name="email" placeholder="Email" required>
     <input type="tel" name="phone" placeholder="Telefon">
     <textarea name="message" placeholder="Mesaj" required></textarea>
 
-    <button type="submit">Trimite mesaj</button>
+    <button type="submit" class="btn btn-primary">
+    <i class="fas fa-paper-plane"></i> Trimite mesaj
+    </button>
 
 </form>
 
