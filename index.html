@@ -26,6 +26,8 @@
     <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 </head>
 
 <body>
@@ -897,21 +899,37 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </div>
 
-<form class="contact-form">
+<form id="contact-form" class="contact-form">
 
-<input type="text" placeholder="Nume">
+    <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Nume"
+        required>
 
-<input type="email" placeholder="Email">
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Email"
+        required>
 
-<input type="tel" placeholder="Telefon">
+    <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="Telefon">
 
-<textarea placeholder="Mesaj"></textarea>
+    <textarea
+        id="message"
+        name="message"
+        placeholder="Mesaj"
+        required></textarea>
 
-<button class="btn btn-primary">
-
-Trimite mesaj
-
-</button>
+    <button type="submit" class="btn btn-primary">
+        Trimite mesaj
+    </button>
 
 </form>
 

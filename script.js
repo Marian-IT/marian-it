@@ -221,3 +221,41 @@ window.addEventListener("scroll",()=>{
 
 });
 
+/* ===========================
+   EMAILJS
+=========================== */
+
+emailjs.init({
+    publicKey: "XJmMnf8L39Cnf6iT1",
+});
+
+const contactForm = document.getElementById("contact-form");
+
+contactForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    emailjs.sendForm(
+        "service_MarianIT",
+        "template_lj3ukwq",
+        this
+    )
+
+    .then(() => {
+
+        alert("Mesajul a fost trimis cu succes!");
+
+        contactForm.reset();
+
+    })
+
+    .catch((error) => {
+
+        console.error(error);
+
+        alert("A apărut o eroare. Încearcă din nou.");
+
+    });
+
+});
+
