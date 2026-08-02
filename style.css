@@ -483,6 +483,7 @@ justify-content:center;
 
 margin-top:-25px;
 
+transform: scale(1.5);
 }
 
 .hero-glow{
@@ -504,13 +505,13 @@ border-radius:50%;
 }
 
 .hero-right img{
-
-position:relative;
-
-z-index:2;
-
-animation:float 5s ease-in-out infinite;
-
+    width: 100%;
+    max-width: 850px;  
+    height: auto;
+    position: relative;
+    z-index: 2;
+    animation: float 5s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(37,99,235,.35));
 }
 
 @keyframes float{
