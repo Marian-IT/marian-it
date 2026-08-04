@@ -834,7 +834,29 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         </div>
 
         <div class="reviews-grid">
+         <div class="review-form">
 
+    <div class="stars-select">
+        <span class="star active" data-value="1">★</span>
+        <span class="star active" data-value="2">★</span>
+        <span class="star active" data-value="3">★</span>
+        <span class="star active" data-value="4">★</span>
+        <span class="star active" data-value="5">★</span>
+    </div>
+
+    <textarea id="reviewText" placeholder="Scrie recenzia ta..."></textarea>
+
+    <input
+        type="text"
+        id="reviewName"
+        placeholder="Numele tău"
+    >
+
+    <button id="sendReview" class="btn btn-primary">
+        Trimite recenzia
+    </button>
+
+</div>
             <div class="review-card">
                 ⭐⭐⭐⭐⭐
                 <p>"Foarte rapid. Mi-a instalat Windows și SSD în aceeași zi."</p>
@@ -1109,6 +1131,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 </footer>
 
 <script src="script.js"></script>
+<script type="module" src="firebase.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-stars@3/tsparticles.preset.stars.bundle.min.js"></script>
 <div id="tsparticles"></div>
 

@@ -2039,3 +2039,61 @@ transform:translate(-60px,50px);
 .footer-logo p{margin:4px 0 0;color:#9bb0d0}
 .footer-column h3{position:relative}
 .footer-column h3:after{content:'';position:absolute;left:0;bottom:-8px;width:60px;height:3px;background:linear-gradient(90deg,#2f80ff,#00d4ff);border-radius:5px}
+
+/*=========================
+FORMULAR RECENZII
+==========================*/
+
+.review-form{
+    max-width:700px;
+    margin:0 auto 40px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.stars-select{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    font-size:40px;
+}
+
+.star{
+    cursor:pointer;
+    color:#555;
+    transition:.3s;
+}
+
+.star.active{
+    color:#FFD700;
+    transform:scale(1.1);
+}
+
+.review-form textarea,
+.review-form input{
+    width:100%;
+    padding:18px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.05);
+    color:#fff;
+    font-size:16px;
+    font-family:'Poppins',sans-serif;
+}
+
+.review-form textarea{
+    min-height:160px;
+    resize:vertical;
+}
+
+.review-form textarea:focus,
+.review-form input:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 15px rgba(37,99,235,.35);
+}
+
+.review-form button{
+    align-self:center;
+}
