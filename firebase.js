@@ -24,34 +24,39 @@ const db = getFirestore(app);
 
 const reviewsGrid = document.getElementById("reviewsGrid");
 const sendButton = document.getElementById("sendReview");
-const stars = document.querySelectorAll(".star");
+const stars = document.querySelectorAll("#ratingStars .star");
 
 let selectedStars = 5;
 
-stars.forEach((star, index) => {
+function updateStars() {
+
+    stars.forEach(star => {
+
+        const value = Number(star.dataset.value);
+
+        if (value <= selectedStars) {
+            star.classList.add("active");
+        } else {
+            star.classList.remove("active");
+        }
+
+    });
+
+}
+
+updateStars();
+
+stars.forEach(star => {
 
     star.addEventListener("click", () => {
 
-        selectedStars = index + 1;
+        selectedStars = Number(star.dataset.value);
 
-        stars.forEach((s, i) => {
-
-            if (i < selectedStars) {
-
-                s.classList.add("active");
-
-            } else {
-
-                s.classList.remove("active");
-
-            }
-
-        });
+        updateStars();
 
     });
 
 });
-
 function renderReview(data) {
 
     const card = document.createElement("div");
