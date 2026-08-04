@@ -2434,3 +2434,16 @@ FORMULAR RECENZII
     margin:0 3px;
 
 }
+
+/* Stele recenzii */
+
+.stars-select .star{
+    color:#555;
+    cursor:pointer;
+    transition:0.2s;
+    user-select:none;
+}
+
+.stars-select .star.active{
+    color:#FFD700;
+}
