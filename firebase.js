@@ -24,6 +24,33 @@ const db = getFirestore(app);
 
 const reviewsGrid = document.getElementById("reviewsGrid");
 const sendButton = document.getElementById("sendReview");
+const stars = document.querySelectorAll(".star");
+
+let selectedStars = 5;
+
+stars.forEach((star, index) => {
+
+    star.addEventListener("click", () => {
+
+        selectedStars = index + 1;
+
+        stars.forEach((s, i) => {
+
+            if (i < selectedStars) {
+
+                s.classList.add("active");
+
+            } else {
+
+                s.classList.remove("active");
+
+            }
+
+        });
+
+    });
+
+});
 
 function renderReview(data) {
 
@@ -94,9 +121,7 @@ sendButton.addEventListener("click", async () => {
         .value
         .trim();
 
-    const stars = document
-        .querySelectorAll(".star.active")
-        .length;
+    const stars = selectedStars;
 
     if (!review || !name) {
 
