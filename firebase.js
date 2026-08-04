@@ -24,7 +24,7 @@ const db = getFirestore(app);
 
 const reviewsGrid = document.getElementById("reviewsGrid");
 const sendButton = document.getElementById("sendReview");
-const stars = document.querySelectorAll("#ratingStars .star");
+const stars = document.querySelectorAll(".stars-select .star");
 
 let selectedStars = 5;
 
