@@ -6,12 +6,12 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-auth.js";
 
 const firebaseConfig = {
-    apiKey: "...",
-    authDomain: "...",
-    projectId: "...",
-    storageBucket: "...",
-    messagingSenderId: "...",
-    appId: "..."
+     apiKey: "AIzaSyA_xfTNK6hhnuEsxHeY_2NFIF3oK5z1QZE",
+    authDomain: "marianit-b6017.firebaseapp.com",
+    projectId: "marianit-b6017",
+    storageBucket: "marianit-b6017.firebasestorage.app",
+    messagingSenderId: "136289406695",
+    appId: "1:136289406695:web:7a374d4f21083fb8215c42"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -31,7 +31,7 @@ document.getElementById("loginBtn").onclick = async ()=>{
 
     }catch(e){
 
-        showToast("Email sau parolă incorecte.");
+        alert("Email sau parolă incorecte.");
 
     }
 
