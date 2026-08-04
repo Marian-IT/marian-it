@@ -835,12 +835,37 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         <div class="reviews-grid">
          <div class="review-action">
+<section id="reviewSection" class="review-form-section">
 
-    <button id="openReviewModal" class="btn btn-primary">
+    <h2>Lasă o recenzie</h2>
 
-        ⭐ Lasă o recenzie
+    <div class="stars">
 
+        <span class="star active" data-value="1">★</span>
+        <span class="star active" data-value="2">★</span>
+        <span class="star active" data-value="3">★</span>
+        <span class="star active" data-value="4">★</span>
+        <span class="star active" data-value="5">★</span>
+
+    </div>
+
+    <input
+        type="text"
+        id="reviewName"
+        placeholder="Numele tău">
+
+    <textarea
+        id="reviewText"
+        placeholder="Scrie recenzia ta..."></textarea>
+
+    <button id="sendReview">
+        Trimite recenzia
     </button>
+
+</section>
+    <a href="#reviewSection" class="btn btn-primary">
+    ⭐ Lasă o recenzie
+</a>
 
 </div>
             <div id="reviewsGrid"></div>

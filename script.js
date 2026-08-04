@@ -513,37 +513,7 @@ if (sendReview) {
         stars.forEach(s => s.classList.add("active"));
 
     });
-
 }
-// =======================
-// MODAL RECENZII
-// =======================
-
-const openReviewBtn = document.getElementById("openReviewModal");
-const reviewModal = document.getElementById("reviewModal");
-const closeReviewBtn = document.getElementById("closeReviewModal");
-
-if (openReviewBtn && reviewModal && closeReviewBtn) {
-
-    openReviewBtn.addEventListener("click", () => {
-        reviewModal.classList.add("active");
-        document.body.style.overflow = "hidden";
-    });
-
-    closeReviewBtn.addEventListener("click", () => {
-        reviewModal.classList.remove("active");
-        document.body.style.overflow = "";
-    });
-
-    reviewModal.addEventListener("click", (e) => {
-        if (e.target === reviewModal) {
-            reviewModal.classList.remove("active");
-            document.body.style.overflow = "";
-        }
-    });
-
-}
-
 // =========================
 // TOAST
 // =========================
