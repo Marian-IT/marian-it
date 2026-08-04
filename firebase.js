@@ -89,25 +89,29 @@ const q = query(
     orderBy("createdAt", "desc")
 );
 
-onSnapshot(q, (snapshot) => {
+onSnapshot(
+    q,
+    (snapshot) => {
 
-    reviewsGrid.innerHTML = "";
+        console.log("Documente:", snapshot.size);
 
-    const reviews = snapshot.docs;
+        reviewsGrid.innerHTML = "";
 
-    // afișează doar primele 6
-    reviews.slice(0, 6).forEach((doc) => {
-        renderReview(doc.data());
-    });
+        snapshot.forEach((doc) => {
 
-    // actualizează butonul
-    const btn = document.getElementById("allReviewsBtn");
+            console.log(doc.data());
 
-    if (btn) {
-        btn.innerHTML = `Vezi toate recenziile (${reviews.length})`;
+            renderReview(doc.data());
+
+        });
+
+    },
+    (error) => {
+
+        console.error("Firestore:", error);
+
     }
-
-});
+);
 
 sendButton.addEventListener("click", async () => {
 
