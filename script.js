@@ -352,8 +352,6 @@ card.style.transform="perspective(900px) rotateX(0) rotateY(0)";
 
 (async () => {
 
-    await loadStarsPreset(tsParticles);
-
     await tsParticles.load({
         id: "tsparticles",
         options: {
@@ -375,6 +373,7 @@ const waPopup = document.querySelector(".wa-popup");
 
 function showWhatsAppPopup() {
 
+    if(!waPopup) return;
     waPopup.classList.add("show");
 
     setTimeout(() => {
@@ -403,7 +402,8 @@ window.addEventListener("load", () => {
 
     setTimeout(() => {
 
-        waPopup.classList.add("show");
+        if(!waPopup) return;
+    waPopup.classList.add("show");
 
         setTimeout(() => {
 
