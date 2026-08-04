@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Toate recenziile | Marian IT</title>
+<a href="index.html" class="btn-primary">
+    ← Înapoi la pagina principală
+</a>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<section class="reviews-page">
+
+    <h1>Toate recenziile</h1>
+
+    <div class="reviews-info">
+
+        <h2 id="ratingAverage">⭐ 5.0</h2>
+
+        <p id="reviewsCount">0 recenzii</p>
+
+    </div>
+
+    <input
+        type="text"
+        id="searchReview"
+        placeholder="Caută după nume..."
+    >
+
+    <div id="reviewsGrid" class="reviews-grid"></div>
+
+    <div class="pagination">
+
+        <button id="prevPage">← Înapoi</button>
+
+        <span id="pageNumber">1</span>
+
+        <button id="nextPage">Înainte →</button>
+
+    </div>
+
+</section>
+
+<script type="module" src="reviews.js"></script>
+
+</body>
+</html>

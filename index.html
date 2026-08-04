@@ -834,32 +834,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         </div>
 
         <div class="reviews-grid">
-         <div class="review-form">
+         <div class="review-action">
 
-    <div class="stars-select">
-        <span class="star active" data-value="1">★</span>
-        <span class="star active" data-value="2">★</span>
-        <span class="star active" data-value="3">★</span>
-        <span class="star active" data-value="4">★</span>
-        <span class="star active" data-value="5">★</span>
-    </div>
+    <button id="openReviewModal" class="btn btn-primary">
 
-    <textarea id="reviewText" placeholder="Scrie recenzia ta..."></textarea>
+        ⭐ Lasă o recenzie
 
-    <input
-        type="text"
-        id="reviewName"
-        placeholder="Numele tău"
-    >
-
-    <button id="sendReview" class="btn btn-primary">
-        Trimite recenzia
     </button>
 
 </div>
             <div id="reviewsGrid"></div>
-
-        </div>
+<div class="reviews-footer">
+    <a href="recenzii.html" id="allReviewsBtn" class="btn-primary">
+        Vezi toate recenziile
+    </a>
+</div>
 
     </div>
 
@@ -1139,8 +1128,48 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </div>
 
+<!-- Modal Recenzie -->
+<div id="reviewModal" class="review-modal">
 
+    <div class="review-modal-box">
+
+        <button id="closeReviewModal" class="modal-close">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <h2>Lasă o recenzie</h2>
+
+        <p>Ne bucurăm să aflăm părerea ta.</p>
+
+        <div class="stars-select">
+            <span class="star active" data-value="1">★</span>
+            <span class="star active" data-value="2">★</span>
+            <span class="star active" data-value="3">★</span>
+            <span class="star active" data-value="4">★</span>
+            <span class="star active" data-value="5">★</span>
+        </div>
+
+        <textarea
+            id="reviewText"
+            placeholder="Scrie recenzia ta..."
+            rows="5"></textarea>
+
+        <input
+            type="text"
+            id="reviewName"
+            placeholder="Numele tău">
+
+        <button
+            id="sendReview"
+            class="btn btn-primary">
+
+            Trimite recenzia
+
+        </button>
+
+    </div>
 
 </div>
+
 </body>
 </html>

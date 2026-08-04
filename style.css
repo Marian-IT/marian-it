@@ -2097,3 +2097,122 @@ FORMULAR RECENZII
 .review-form button{
     align-self:center;
 }
+
+.reviews-footer{
+    text-align:center;
+    margin-top:30px;
+}
+
+.reviews-footer .btn-primary{
+    display:inline-block;
+    padding:12px 28px;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+/* ===========================
+      REVIEW MODAL
+=========================== */
+
+.review-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:99999;
+
+}
+
+.review-modal.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.review-modal-box{
+
+    width:90%;
+
+    max-width:520px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    position:relative;
+
+    transform:scale(.9);
+
+    transition:.3s;
+
+}
+
+.review-modal.active .review-modal-box{
+
+    transform:scale(1);
+
+}
+
+.modal-close{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    border:none;
+
+    background:none;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+}
+
+.review-modal textarea,
+.review-modal input{
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    font-size:16px;
+
+    box-sizing:border-box;
+
+}
+
+.review-modal .btn{
+
+    width:100%;
+
+    margin-top:20px;
+
+}

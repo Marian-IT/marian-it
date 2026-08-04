@@ -66,11 +66,19 @@ onSnapshot(q, (snapshot) => {
 
     reviewsGrid.innerHTML = "";
 
-    snapshot.forEach((doc) => {
+    const reviews = snapshot.docs;
 
+    // afișează doar primele 6
+    reviews.slice(0, 6).forEach((doc) => {
         renderReview(doc.data());
-
     });
+
+    // actualizează butonul
+    const btn = document.getElementById("allReviewsBtn");
+
+    if (btn) {
+        btn.innerHTML = `Vezi toate recenziile (${reviews.length})`;
+    }
 
 });
 
@@ -111,3 +119,12 @@ sendButton.addEventListener("click", async () => {
     document.getElementById("reviewName").value = "";
 
 });
+
+const modal = document.getElementById("reviewModal");
+
+if (modal) {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+alert("Mulțumim! Recenzia ta a fost trimisă cu succes.");
