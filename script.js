@@ -543,3 +543,24 @@ if (openReviewBtn && reviewModal && closeReviewBtn) {
     });
 
 }
+
+// =========================
+// TOAST
+// =========================
+
+window.showToast = function(message){
+
+    const toast = document.getElementById("toast");
+    const text = document.getElementById("toastMessage");
+
+    if(!toast || !text) return;
+
+    text.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+        toast.classList.remove("show");
+    },3000);
+
+}

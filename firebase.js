@@ -100,7 +100,7 @@ sendButton.addEventListener("click", async () => {
 
     if (!review || !name) {
 
-        alert("Completează toate câmpurile!");
+        showToast("Completează toate câmpurile!");
 
         return;
 
@@ -127,4 +127,4 @@ if (modal) {
     document.body.style.overflow = "";
 }
 
-alert("Mulțumim! Recenzia ta a fost trimisă cu succes.");
+showToast("Recenzia a fost trimisă cu succes!");
