@@ -350,25 +350,6 @@ card.style.transform="perspective(900px) rotateX(0) rotateY(0)";
 
 });
 
-(async () => {
-
-    await tsParticles.load({
-        id: "tsparticles",
-        options: {
-            preset: "stars",
-            background: {
-                color: "transparent"
-            },
-            particles: {
-                color: {
-                    value: "#60a5fa"
-                }
-            }
-        }
-    });
-
-})();
-
 const waPopup = document.querySelector(".wa-popup");
 
 function showWhatsAppPopup() {
@@ -437,83 +418,6 @@ navMenu.classList.remove("active");
 
 });
 
-/*=========================
-RECENZII
-==========================*/
-
-let selectedStars = 5;
-
-const stars = document.querySelectorAll(".star");
-
-stars.forEach(star => {
-
-    star.addEventListener("click", () => {
-
-        selectedStars = Number(star.dataset.value);
-
-        stars.forEach(s => {
-
-            if (Number(s.dataset.value) <= selectedStars) {
-
-                s.classList.add("active");
-
-            } else {
-
-                s.classList.remove("active");
-
-            }
-
-        });
-
-    });
-
-});
-
-const sendReview = document.getElementById("sendReview");
-
-if (sendReview) {
-
-    sendReview.addEventListener("click", () => {
-
-        const review = document.getElementById("reviewText").value.trim();
-        const name = document.getElementById("reviewName").value.trim();
-
-        if (review === "" || name === "") {
-
-            alert("Completează toate câmpurile!");
-            return;
-
-        }
-
-        const today = new Date().toLocaleDateString("ro-RO");
-
-        const card = document.createElement("div");
-
-        card.className = "review-card";
-
-        card.innerHTML = `
-            <div style="font-size:22px;color:#FFD700;">
-                ${"★".repeat(selectedStars)}
-            </div>
-
-            <p>"${review}"</p>
-
-            <h4>${name}</h4>
-
-            <small style="color:#94a3b8;">${today}</small>
-        `;
-
-        document.getElementById("reviewsGrid").prepend(card);
-
-        document.getElementById("reviewText").value = "";
-        document.getElementById("reviewName").value = "";
-
-        selectedStars = 5;
-
-        stars.forEach(s => s.classList.add("active"));
-
-    });
-}
 // =========================
 // TOAST
 // =========================

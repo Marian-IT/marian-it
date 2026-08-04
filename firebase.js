@@ -157,9 +157,4 @@ sendButton.addEventListener("click", async () => {
 
 }
 
-const modal = document.getElementById("reviewModal");
-
-if (modal) {
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
-}
+});
