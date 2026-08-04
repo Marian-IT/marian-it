@@ -131,6 +131,8 @@ sendButton.addEventListener("click", async () => {
 
     }
 
+    try {
+
     await addDoc(collection(db, "reviews"), {
 
         review,
@@ -143,7 +145,13 @@ sendButton.addEventListener("click", async () => {
     document.getElementById("reviewText").value = "";
     document.getElementById("reviewName").value = "";
 
-});
+    showToast("Recenzia a fost trimisă cu succes!");
+
+} catch(error){
+
+    console.error(error);
+
+}
 
 const modal = document.getElementById("reviewModal");
 
@@ -151,5 +159,3 @@ if (modal) {
     modal.classList.remove("active");
     document.body.style.overflow = "";
 }
-
-showToast("Recenzia a fost trimisă cu succes!");
